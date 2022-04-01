@@ -1,0 +1,18 @@
+Model training is done on the google colab platform.
+Dataset obtained from the kaggle.
+Link:
+	https://www.kaggle.com/datasets/andrewmvd/lung-and-colon-cancer-histopathological-images
+
+Split the dataset manually or directly by using imagedatagenerator.
+Here I manually divided the dataset into train=70%, validation=15% and test=15%.
+Train: 
+	https://drive.google.com/drive/folders/1uE13pUlixq8LZRqdpU-XtiM4GIIiHCBY?usp=sharing
+Test: 
+	https://drive.google.com/drive/folders/1irvBxi1pSvZB1DQyzrO63ZLLhNm7tXm4?usp=sharing
+Validation:
+	https://drive.google.com/drive/folders/1zjF4K2bf0L8ZGqcHPNdJ0lJGVJ856Wlg?usp=sharing
+
+CLAHE RGB enhanced dataset:
+	https://drive.google.com/drive/folders/11i0T2OSDhftAeM-j5Kejt53KNvvRO3ck?usp=sharing
+
+Transfer Learning techniques used -MobileNet and VGG16.
