@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block script %}
+<script>
+    
+    $(function () {
+        $("#file").change(function () {
+            $("#preview").html("");
+            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.png|.bmp)$/;
+            if (regex.test($(this).val().toLowerCase())) {
+
+                    if (typeof (FileReader) != "undefined") {
+                        $("#preview").show();
+                        $("#preview").append("<img />");
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            $("#preview img").attr("src", e.target.result);
+                            $("#preview img").attr("height", "448px");
+                            $("#preview img").attr("width", "448px");
+                        }
+                        reader.readAsDataURL($(this)[0].files[0]);
+                    } else {
+                        alert("This browser does not support FileReader.");
+                    }
+                
+            } else {
+                alert("Please upload a valid image file.");
+            }
+        });
+    });
+
+</script>
+
+{% endblock script %}
+{% block content %}
+
+    <form action="/result" method="post" enctype="multipart/form-data">
+        
+        <div class="row">
+            <div class="center ml-auto mr-auto">
+                <div class="ml-auto mr ml-auto"><br>
+                    <div id="preview" style="height: 448px;"></div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="file" name="pic" id="file">
+                    <!-- <label for="file"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;&nbsp;Choose a file</label> -->
+                </div>       
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="center ml-auto mr-auto">
+                <button type="submit" class="btn btn-primary butn">CHECK</button>
+            </div>
+        </div>
+    </form>
+
+{% endblock content %}
