@@ -1,0 +1,4 @@
+To run the application install anaconda
+Install packages such as keras,tensorflow,flask,pillow,etc.
+
+Run the file main.py to run the application.
