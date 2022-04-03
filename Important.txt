@@ -16,3 +16,6 @@ CLAHE RGB enhanced dataset:
 	https://drive.google.com/drive/folders/11i0T2OSDhftAeM-j5Kejt53KNvvRO3ck?usp=sharing
 
 Transfer Learning techniques used -MobileNet and VGG16.
+
+// It's not necessary to use median filter which is used in the file in the folder colorectal cancer detection-main.Check more on the web for more details.
+Source folder contains trainig code. More important one is cancer.ipynb file
